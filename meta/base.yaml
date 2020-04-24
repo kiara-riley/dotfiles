@@ -7,3 +7,8 @@
       stderr: true
 
 - clean: ['~']
+
+- shell:
+  -
+    description: Updating git submodules..
+    command: git submodule update --init --recursive ./

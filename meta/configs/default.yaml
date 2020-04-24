@@ -1,23 +1,7 @@
 - shell:
   -
-    description: Updating git submodules..
-    command: git submodule update --init --recursive ./
-
-  -
     description: Moving old bashrc
     command: FILE="$HOME/.bashrc"; if [[ -e "$FILE" ]] && [[ ! -L "$FILE" ]]; then mv "$FILE" "${FILE}.asinstalled"; else echo "$FILE doesn't exist or exists as a link, not moving, no error" >&2; fi
-
-  -
-    description: Create work ssh if it doesn't exist
-    command: FILE="./ssh/workconfig"; touch $FILE
-
-  -
-    description: Combine Work and Global ssh configs
-    command: CONFIG="./ssh/finalconfig"; rm -f $CONFIG;cat "./ssh/config" "newline" "./ssh/workconfig" > $CONFIG
-
-  -
-    description: Fix ssh config permissions
-    command: chmod 600 ssh/finalconfig
 
 - link:
     ~/.config/git/config: git/gitconfig
@@ -26,7 +10,7 @@
     ~/.bashrc: bash/bash.sh
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.reset.conf: tmux/tmux.reset.conf
-    ~/.ssh/config: ssh/finalconfig
+    ~/.ssh/config: ssh/config
 
 - shell:
   -
