@@ -1,3 +1,5 @@
 default
 nvim
 xsession
+tmux
+bash
