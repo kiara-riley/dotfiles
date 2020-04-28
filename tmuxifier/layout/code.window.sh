@@ -7,7 +7,7 @@ window_root $PROJ
 new_window "$PROJ_NAME"
 
 # Split window into panes.
-run_cmd "nvim"
+run_cmd "vim"
 split_h 50
 select_pane 2
 split_v 50
