@@ -1,0 +1,4 @@
+- link:
+    ~/.config/git/config: git/gitconfig
+    ~/.config/git/workconfig: git/workconfig
+    ~/.config/git/personalconfig: git/personalconfig

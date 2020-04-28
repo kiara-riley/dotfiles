@@ -3,3 +3,5 @@ nvim
 xsession
 tmux
 bash
+git
+ssh

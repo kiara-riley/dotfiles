@@ -1,13 +1,4 @@
-- link:
-    ~/.config/git/config: git/gitconfig
-    ~/.config/git/workconfig: git/workconfig
-    ~/.config/git/personalconfig: git/personalconfig
-    ~/.ssh/config: ssh/config
-
 - shell:
-  -
-    description: Fix ssh config file permissions
-    command: chmod 600 ssh/config
   -
     description: Install required packages
     command: scripts/install.sh
