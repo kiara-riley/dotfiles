@@ -59,6 +59,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Sync clipboard(the ctrl-c one) to the primary clip(the middle click one)
+bindsym $mod+Shift+p exec "xclip -o -selection clipboard | xclip -selection primary"
+
 #
 # Moving around:
 #
