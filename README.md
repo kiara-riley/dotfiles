@@ -13,7 +13,7 @@ Installation
 ------------
 
 * `git clone https://github.com/kraigmckernan/dotfiles.git`
-* `cd dotfiles && ./install`
+* `cd dotfiles && ./install default`
 
 Other Setup Requirements
 ------------------------

@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+    shell:
+      stdout: false
+      stderr: true
+
+- clean: ['~']
+
+- shell:
+  -
+    description: Updating git submodules..
+    command: git submodule update --init --recursive ./

@@ -1,0 +1,4 @@
+- shell:
+  -
+    description: Install required packages
+    command: scripts/install.sh

@@ -1,5 +1,5 @@
 [submodule "dotbot"]
-	path = dotbot
+	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot
 [submodule "vim/plugins/vim-pathogen"]
 	path = vim/plugins/vim-pathogen

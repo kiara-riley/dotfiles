@@ -1,0 +1,25 @@
+# This is for systems where an X session will be run, IE not ssh servers
+- link:
+    ~/.config/i3/config: i3/config
+    ~/.config/polybar/config: polybar/config
+    ~/.config/polybar/launch.sh: polybar/launch.sh
+    ~/.config/tilix/schemes: tilix/base16-tilix/tilix
+    ~/.config/compton.conf: compton/compton.conf
+    ~/.config/rofi/config.rasi: rofi/config.rasi
+    ~/bin/workdesk.sh: scripts/workdesk.sh
+    ~/bin/laptop.sh: scripts/laptop.sh
+    ~/bin/home.sh: scripts/home.sh
+    ~/.local/share/fonts/CousinePowerline.ttf: 'font/powerline-fonts/Cousine/Cousine for Powerline.ttf'
+
+- shell:
+  -
+    description: Install required packages
+    command: scripts/install_x.sh
+
+  -
+    description: Loading Tilix config files
+    command: dconf load /com/gexperts/Tilix/ < tilix/tilix.dconf
+
+  -
+    description: Reloading font cache
+    command: fc-cache -f -v

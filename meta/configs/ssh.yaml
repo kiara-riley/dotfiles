@@ -1,0 +1,7 @@
+- link:
+    ~/.ssh/config: ssh/config
+
+- shell:
+  -
+    description: Fix ssh config file permissions
+    command: chmod 600 ssh/config
