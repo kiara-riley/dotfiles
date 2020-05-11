@@ -1,6 +1,7 @@
 " Ctrl-F => MRU Files
 nnoremap <C-f> :CtrlPMRUFiles<CR>
 nnoremap <C-g> :CtrlPRoot<CR>
+nnoremap <C-l> :CtrlPLines<CR>
 
 " Ignores files in .gitignore
 let g:ctrlp_user_command = {
