@@ -1,7 +1,13 @@
+- shell:
+  -
+    description: Create workconfig if doesn't exist
+    command: touch ssh/workconfig
+
 - link:
     ~/.ssh/config: ssh/config
+    ~/.ssh/workconfig: ssh/workconfig
 
 - shell:
   -
     description: Fix ssh config file permissions
-    command: chmod 600 ssh/config
+    command: chmod 600 ssh/config && chmod 600 ssh/workconfig
