@@ -83,8 +83,8 @@ nnoremap <leader>r :redraw!<CR>
 
 let g:deoplete#enable_at_startup = 1
 
-let g:python2_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python2_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Lets us select in between the final char and the newline
 set virtualedit=onemore
