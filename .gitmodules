@@ -67,3 +67,6 @@
 [submodule "font/powerline-fonts"]
 	path = font/powerline-fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "vim/plugins/vim-hocon"]
+	path = vim/plugins/vim-hocon
+	url = https://github.com/GEverding/vim-hocon.git
