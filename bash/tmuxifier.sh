@@ -25,6 +25,8 @@ new_windows() {
   fi
 }
 
+TMUX_VERSION="$(tmux -V | cut -d" " -f2)"
+
 if [[ $? == 0 && "$TMUX_VERSION" > "1.6" && -f "$TMUXIFIER_BIN/tmuxifier" ]]; then
   export PATH="$TMUXIFIER_BIN:$PATH"
   export TMUXIFIER_LAYOUT_PATH="$DOTFILES/tmuxifier/layout"
