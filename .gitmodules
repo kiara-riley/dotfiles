@@ -67,3 +67,6 @@
 [submodule "vim/plugins/vim-hocon"]
 	path = vim/plugins/vim-hocon
 	url = https://github.com/GEverding/vim-hocon.git
+[submodule "vim/plugins/vim-ormolu"]
+	path = vim/plugins/vim-ormolu
+	url = https://github.com/sdiehl/vim-ormolu.git
