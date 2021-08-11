@@ -55,9 +55,6 @@
 [submodule "vim/plugins/vim-hindent"]
 	path = vim/plugins/vim-hindent
 	url = https://github.com/alx741/vim-hindent.git
-[submodule "vim/plugins/intero-neovim"]
-	path = vim/plugins/intero-neovim
-	url = https://github.com/parsonsmatt/intero-neovim.git
 [submodule "vim/plugins/vim-deoplete"]
 	path = vim/plugins/vim-deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
