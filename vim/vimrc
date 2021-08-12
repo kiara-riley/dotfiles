@@ -11,3 +11,4 @@ runtime config/fugitive.vim
 runtime config/neocomplete.vim
 runtime config/ack.vim
 runtime config/syntastic.vim
+runtime config/formatter.vim
