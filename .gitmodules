@@ -67,3 +67,6 @@
 [submodule "vim/plugins/vim-ormolu"]
 	path = vim/plugins/vim-ormolu
 	url = https://github.com/sdiehl/vim-ormolu.git
+[submodule "vim/plugins/vim-filetype-formatter"]
+	path = vim/plugins/vim-filetype-formatter
+	url = https://github.com/pappasam/vim-filetype-formatter.git
