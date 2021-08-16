@@ -1,9 +1,9 @@
 
-nnoremap <silent> <leader>f :FiletypeFormat<cr>
-vnoremap <silent> <leader>f :FiletypeFormat<cr>
+nnoremap <silent> <leader>t :FiletypeFormat<cr>
+vnoremap <silent> <leader>t :FiletypeFormat<cr>
 
 let g:vim_filetype_formatter_commands = {
-      \ 'haskell': '~/git/end-to-end/scripts/format-haskell -'
+      \ 'haskell': 'fourmolu --ghc-opt -XTypeApplications --ghc-opt -XBangPatterns 2>/dev/null'
       \ }
 
 "We don't want any of the default formatters here
