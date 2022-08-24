@@ -13,7 +13,7 @@ get_proj_name() {
 
 create_windows() {
   get_proj_name $1
-  tmuxifier load-session kraig
+  tmuxifier load-session kiara
 }
 
 new_windows() {
@@ -34,7 +34,7 @@ if [[ $? == 0 && "$TMUX_VERSION" > "1.6" && -f "$TMUXIFIER_BIN/tmuxifier" ]]; th
   # Usage `windows ~/root`
   # Uses given dir for the window root
   alias windows=create_windows
-  alias kill-windows="tmux kill-session -t kraig"
+  alias kill-windows="tmux kill-session -t kiara"
   alias new-window=new_windows
 else
   alias windows="echo 'tmux must be installed and >version 1.6'"
