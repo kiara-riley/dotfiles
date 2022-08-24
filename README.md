@@ -12,7 +12,7 @@ Requirements
 Installation
 ------------
 
-* `git clone https://github.com/me/dotfiles.git`
+* `git clone https://github.com/kiara-riley/dotfiles.git`
 * `cd dotfiles && ./install default`
 
 Other Setup Requirements
