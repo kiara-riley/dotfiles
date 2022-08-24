@@ -20,3 +20,7 @@
 
 [includeIf "gitdir:~/personal/**"]
   path = ~/.config/git/personalconfig
+[user]
+	signingkey = 70D0D363E22B919B930CA08106CE5C30EA0BC8B1
+[commit]
+	gpgsign = true
