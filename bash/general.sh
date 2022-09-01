@@ -18,3 +18,6 @@ PATH="$PATH:$HOME/bin"
 
 # Ignore duplicate bash history items
 export HISTCONTROL=ignoreboth:erasedups
+
+# Use static ssh auth sock
+export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock

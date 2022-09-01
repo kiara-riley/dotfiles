@@ -14,7 +14,7 @@ reshell() {
 }
 
 newagent() {
-  eval $(ssh-agent)
+  eval $(ssh-agent -s)
 
   if test "$SSH_AUTH_SOCK" ; then
     ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
