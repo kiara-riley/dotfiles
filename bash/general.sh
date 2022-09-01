@@ -14,7 +14,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 fi
 
-PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/bin:$HOME/bin/tmux"
 
 # Ignore duplicate bash history items
 export HISTCONTROL=ignoreboth:erasedups

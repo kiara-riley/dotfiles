@@ -5,3 +5,4 @@
 
 - link:
     ~/.bashrc: bash/bash.sh
+    ~/bin: bin/
