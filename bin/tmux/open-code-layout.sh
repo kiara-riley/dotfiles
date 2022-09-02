@@ -4,13 +4,14 @@ if [[ -z "$1" ]]; then
   echo "$1 doesn't exist"
   exit 1
 else
-  P="$1"
+  PROJ=$(realpath "$1")
+  export PROJ
 fi
-export PROJ="$P"
-export PROJ_NAME=$(realpath "$PROJ" | xargs basename)
+
+list-windows.sh | grep -q "$PROJ" && { window-picker.sh "$PROJ"; exit 0; }
 
 if [[ -d $PROJ ]]; then
-  tmuxifier load-window test
+  tmuxifier load-window code
 else
   echo "Arg must be a directory"
 fi
