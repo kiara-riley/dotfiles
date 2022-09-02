@@ -1,7 +1,6 @@
 " Ctrl-F => MRU Files
 nnoremap <C-f> :CtrlPMRUFiles<CR>
 nnoremap <C-g> :CtrlPRoot<CR>
-nnoremap <C-l> :CtrlPLines<CR>
 
 " Ignores files in .gitignore
 let g:ctrlp_user_command = {
@@ -20,3 +19,5 @@ let g:ctrlp_max_depth=50
 " This line changes ctrlp to believe the working directory is *actually* the
 " working path that vim uses. Cool cool cool.
 let g:ctrlp_working_path_mode = ''
+
+let g:ctrlp_mruf_relative = 1

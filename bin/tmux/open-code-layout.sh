@@ -8,7 +8,7 @@ else
   export PROJ
 fi
 
-list-windows.sh | grep -q "$PROJ" && { window-picker.sh "$PROJ"; exit 0; }
+list-windows.sh | grep -q "$PROJ$" && { window-picker.sh "$PROJ"; exit 0; }
 
 if [[ -d $PROJ ]]; then
   tmuxifier load-window code
