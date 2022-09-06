@@ -4,7 +4,7 @@ window_root $PROJ
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "$PROJ"
+new_window "$PROJ_NAME"
 
 # Split window into panes.
 run_cmd "vim"
