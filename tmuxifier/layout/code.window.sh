@@ -10,5 +10,6 @@ new_window "$PROJ"
 run_cmd "vim"
 split_h 50
 select_pane 2
+run_cmd "test -f shell.nix && reshell"
 split_v 50
 select_pane 1

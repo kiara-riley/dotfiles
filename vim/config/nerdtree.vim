@@ -12,4 +12,7 @@ let g:NERDTreeDirArrowCollapsible='-'
 " Close vim if NERDTree is last window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Open by default
 autocmd VimEnter * NERDTree
+" But select main window
+autocmd VimEnter * wincmd p
