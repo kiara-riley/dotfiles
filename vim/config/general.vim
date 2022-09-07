@@ -63,7 +63,7 @@ set wildmenu
 set wildmode=longest:list,list,full
 
 " Switch to paste mode
-set pastetoggle=<F2>
+"set pastetoggle=<F2>
 
 " Group that matches trailing whitespace except when typing at the end of a line.
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -76,15 +76,10 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 " This may not work on all systems
 noremap <Esc>o :only<CR>
 " Same Binding for OSX
-noremap ø :only<CR>
+"noremap ø :only<CR>
 
 " Redraw screen mapping
-nnoremap <leader>r :redraw!<CR>
-
-let g:deoplete#enable_at_startup = 1
-
-let g:python2_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+"nnoremap <leader>r :redraw!<CR>
 
 " Lets us select in between the final char and the newline
 set virtualedit=onemore

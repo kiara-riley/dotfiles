@@ -13,6 +13,8 @@ reshell() {
   nix-shell || reshell
 }
 
+alias newdirenv="echo 'use nix' > .envrc && direnv allow"
+
 newagent() {
   eval $(ssh-agent -s)
 
