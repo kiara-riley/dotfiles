@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -8,7 +9,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = [
-    pkgs.haskell-language-server
+    # dynamic gets rid of a TH warning on every startup
+    (pkgs.haskell-language-server.override { dynamic = true; })
     pkgs.neovim
     pkgs.nodejs
   ];
