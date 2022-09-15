@@ -22,3 +22,8 @@ newagent() {
     ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
   fi
 }
+
+die() {
+  echo "Error $1"
+  exit 1
+}
