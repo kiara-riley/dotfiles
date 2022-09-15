@@ -24,13 +24,14 @@ checkout_branch() {
 }
 
 origin_branches() {
-  cd "$pm_main_repo_root"
-  git ls-remote --heads "$pm_remote" | cut -f2 | sed -e "s/^refs\/heads\///" | awk -v remote="$pm_remote" '{ print $1 " " remote }'
+  git -C "$pm_main_repo_root" ls-remote --heads "$pm_remote" | \
+  cut -f2 | \
+  sed -e "s/^refs\/heads\///" | \
+  awk -v remote="$pm_remote" '{ print $1 " " remote }'
 }
 
 delete_branch() {
-  cd "$pm_main_repo_root"
-  git worktree remove $1
+  git -C "$pm_main_repo_root" worktree remove $1
 }
 
 branch_on_fs() {
@@ -41,20 +42,14 @@ branch_on_fs() {
 ### Commands
 
 make() {
-  local s
-  s=$( select_branch )
-  r=$?
-  echo $r
-  [ $r ] || {
-    echo "Making Branch"
-    read -p "Branch Name:" branch
-    read -p "$branch Worktree Name:" worktree
-    checkout_branch "-b$branch" $worktree
-  }
+  echo "Making Branch"
+  read -p "Branch Name:" branch
+  read -p "$branch Worktree Name:" worktree
+  checkout_branch "-b$branch" $worktree
 }
 
 list() {
-  find_branches
+  find_branches | fzf --header "List of branches, no action taken"
 }
 
 delete() {
@@ -65,6 +60,7 @@ select_branch() {
   BRANCH=$({ find_branches; origin_branches ||:; } | fzf --header "Select Branch" | cut -d' ' -f1)
   if ! branch_on_fs $BRANCH
   then
+    echo "$BRANCH not on fs, making worktree"
     read -p "$BRANCH Worktree Name:" worktree
     checkout_branch $BRANCH $worktree
     echo "$worktree"
@@ -73,13 +69,24 @@ select_branch() {
   fi
 }
 
+open_branch_project() {
+  BRANCH=$(select_branch)
+  open-project.sh "$BRANCH"
+}
+
+update_remote() {
+  git -C "$pm_main_repo_root" fetch
+}
+
 if [[ -z "${1-}" ]];
 then
   command=$(
     printf '%s\n' \
-      list \
+      open_branch_project \
       make \
       delete \
+      update_remote \
+      list \
     | fzf --header "Branch commands"
   )
 else
@@ -87,7 +94,7 @@ else
 fi
 
 case "$command" in
-  make|list|delete|select_branch)
+  make|list|delete|select_branch|open_branch_project|update_remote)
     eval $command
   ;;
   *)
