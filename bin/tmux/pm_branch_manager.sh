@@ -4,7 +4,6 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 # Set vars up
-set -e
 source pm_var.sh
 
 find_branches() {
