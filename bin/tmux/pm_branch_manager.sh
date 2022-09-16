@@ -16,10 +16,10 @@ find_branches() {
 }
 
 checkout_branch() {
-  branch="$1"
+  base_branch="$1"
   worktree="$2"
-  cd "$pm_main_repo_root"
-  swallow_output=$(git worktree add "$worktree" "$branch")
+  extra_args="$3"
+  swallow_output=$(git -C "$pm_main_repo_root" worktree add "$worktree" "$base_branch" "$extra_args")
 }
 
 origin_branches() {
@@ -42,9 +42,10 @@ branch_on_fs() {
 
 make() {
   echo "Making Branch"
-  read -p "Branch Name:" branch
+  read -p "New Branch Name:" branch
   read -p "$branch Worktree Name:" worktree
-  checkout_branch "-b$branch" $worktree
+  base_branch=$(origin_branches | fzf --header "Select Base Branch" | awk '{ print $2 "/" $1 }')
+  checkout_branch $base_branch $worktree "-b$branch"
 }
 
 list() {
@@ -59,7 +60,6 @@ select_branch() {
   BRANCH=$({ find_branches; origin_branches ||:; } | fzf --header "Select Branch" | cut -d' ' -f1)
   if ! branch_on_fs $BRANCH
   then
-    echo "$BRANCH not on fs, making worktree"
     read -p "$BRANCH Worktree Name:" worktree
     checkout_branch $BRANCH $worktree
     echo "$worktree"
