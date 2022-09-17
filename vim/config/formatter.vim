@@ -1,9 +1,9 @@
 
-nnoremap <silent> <leader>t :FiletypeFormat<cr>
-vnoremap <silent> <leader>t :FiletypeFormat<cr>
+"nnoremap <silent> <leader>t :FiletypeFormat<cr>
+"vnoremap <silent> <leader>t :FiletypeFormat<cr>
 
 let g:vim_filetype_formatter_commands = {
-      \ 'haskell': 'fourmolu --ghc-opt -XTypeApplications --ghc-opt -XBangPatterns 2>/dev/null'
+      \ 'haskell': 'fourmolu --ghc-opt -XTypeApplications --ghc-opt -XBangPatterns'
       \ }
 
 "We don't want any of the default formatters here

@@ -102,3 +102,10 @@ vmap <Leader>p "+p
 " Insert Mode
 " \p => paste selection at location, stay in insert mode
 imap <Leader>p <Esc>"+pa
+
+
+
+" for a direnv and coc restart
+nmap <Leader>c :DirenvExport<CR>
+" Make function that sets this then unsets this?
+"autocmd User DirenvLoaded :CocRestart

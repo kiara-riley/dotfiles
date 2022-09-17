@@ -45,7 +45,7 @@ make() {
   read -p "New Branch Name:" branch
   read -p "$branch Worktree Name:" worktree
   base_branch=$(origin_branches | fzf --header "Select Base Branch" | awk '{ print $2 "/" $1 }')
-  checkout_branch $base_branch $worktree "-b$branch"
+  checkout_branch $base_branch $worktree "-b$branch --no-track"
 }
 
 list() {
@@ -69,7 +69,7 @@ select_branch() {
 }
 
 open_branch_project() {
-  BRANCH=$(select_branch)
+  BRANCH=$(find_branches | fzf --header "Select Branch" | cut -d' ' -f1)
   open-project.sh "$BRANCH"
 }
 

@@ -4,7 +4,13 @@
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
-      "filetypes": ["haskell", "lhaskell"]
+      "filetypes": ["haskell", "lhaskell"],
+      "settings": {
+        "haskell": {
+          "formattingProvider": "fourmolu"
+        }
+      }
     }
-  }
+  },
+  "suggest.noselect": true
 }

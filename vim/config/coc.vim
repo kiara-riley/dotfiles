@@ -57,9 +57,12 @@ nmap <leader>rn <Plug>(coc-rename)
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
+command! -nargs=0 Format :call CocActionAsync('format')
+nnoremap <silent> <leader>t :Format<cr>
+vnoremap <silent> <leader>t :Format<cr>
 
 
 " Chosen above, Default below
