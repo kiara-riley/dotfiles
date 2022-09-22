@@ -12,12 +12,11 @@ singl() {
 set -e
 source pm_var.sh
 
-findp $HOME/git/personal "me";
-findp $HOME/git "git";
-
 
 if [[ -z "$1" ]]
 then
+  findp $HOME/git/personal "me";
+  findp $HOME/git "git";
   find_main_repo "$pm_main_branch"
   exit 0
 elif test -e "$pm_main_repo_root/$1/$pm_repo_test_file"
