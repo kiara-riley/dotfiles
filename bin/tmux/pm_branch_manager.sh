@@ -18,8 +18,7 @@ find_branches() {
 checkout_branch() {
   base_branch="$1"
   worktree="$2"
-  extra_args="$3"
-  swallow_output=$(git -C "$pm_main_repo_root" worktree add "$worktree" "$base_branch" "$extra_args")
+  swallow_output=$(git -C "$pm_main_repo_root" worktree add "$worktree" "$base_branch" ${@:3:15})
 }
 
 origin_branches() {
@@ -45,7 +44,7 @@ make() {
   read -p "New Branch Name:" branch
   read -p "$branch Worktree Name:" worktree
   base_branch=$(origin_branches | fzf --header "Select Base Branch" | awk '{ print $2 "/" $1 }')
-  checkout_branch $base_branch $worktree "-b$branch --no-track"
+  checkout_branch $base_branch $worktree -b$branch --no-track
 }
 
 list() {
