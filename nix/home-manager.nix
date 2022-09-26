@@ -9,6 +9,8 @@
     (pkgs.haskell-language-server.override { dynamic = true; })
     pkgs.neovim
     pkgs.nodejs
+    pkgs.ghc
+    pkgs.haskellPackages.prune-juice
   ];
 
   programs.direnv = {
