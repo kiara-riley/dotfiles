@@ -11,6 +11,8 @@
     pkgs.nodejs
     pkgs.ghc
     pkgs.haskellPackages.prune-juice
+
+    pkgs.rustup
   ];
 
   programs.direnv = {

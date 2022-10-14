@@ -39,12 +39,16 @@ branch_on_fs() {
 
 ### Commands
 
-make() {
+new_branch() {
   echo "Making Branch"
   read -p "New Branch Name:" branch
   read -p "$branch Worktree Name:" worktree
   base_branch=$(origin_branches | fzf --header "Select Base Branch" | awk '{ print $2 "/" $1 }')
   checkout_branch $base_branch $worktree -b$branch --no-track
+}
+
+new_worktree() {
+  return 0
 }
 
 list() {
@@ -81,7 +85,7 @@ then
   command=$(
     printf '%s\n' \
       open_branch_project \
-      make \
+      new_branch \
       delete \
       update_remote \
       list \
@@ -92,7 +96,7 @@ else
 fi
 
 case "$command" in
-  make|list|delete|select_branch|open_branch_project|update_remote)
+  new_branch|list|delete|select_branch|open_branch_project|update_remote)
     eval $command
   ;;
   *)

@@ -103,9 +103,22 @@ vmap <Leader>p "+p
 " \p => paste selection at location, stay in insert mode
 imap <Leader>p <Esc>"+pa
 
+function CocCallback()
+  " Remove the callback
+  autocmd! DirenvCocLink
+  CocRestart
+endfunction
 
+function DirenvCoc()
+  " Setup a callback to restart Coc
+  augroup DirenvCocLink
+  autocmd User DirenvLoaded :call CocCallback()
+  augroup END
+
+  DirenvExport
+endfunction
 
 " for a direnv and coc restart
-nmap <Leader>c :DirenvExport<CR>
+nmap <Leader>c :call DirenvCoc()<CR>
 " Make function that sets this then unsets this?
 "autocmd User DirenvLoaded :CocRestart

@@ -64,6 +64,8 @@ command! -nargs=0 Format :call CocActionAsync('format')
 nnoremap <silent> <leader>t :Format<cr>
 vnoremap <silent> <leader>t :Format<cr>
 
+nmap <silent> <leader>h <Plug>(coc-float-hide)
+
 
 " Chosen above, Default below
 
