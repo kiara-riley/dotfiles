@@ -1,7 +1,7 @@
 default
 nvim
+bash
 xsession
 tmux
-bash
 git
 ssh

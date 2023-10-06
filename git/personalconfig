@@ -3,3 +3,5 @@
 [user]
   name = Kiara McKernan
   email = kiara.riley.mck@gmail.com
+[commit]
+  gpgsign = false
