@@ -1,0 +1,2 @@
+- link:
+    ~/.config/nixpkgs/home.nix: nix/home-manager.nix

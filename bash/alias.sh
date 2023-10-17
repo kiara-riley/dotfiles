@@ -15,10 +15,17 @@ reshell() {
   nix-shell || reshell
 }
 
+alias newdirenv="echo 'use nix' > .envrc && direnv allow"
+
 newagent() {
   eval $(ssh-agent -s)
 
   if test "$SSH_AUTH_SOCK" ; then
     ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
   fi
+}
+
+die() {
+  echo "Error $1"
+  exit 1
 }

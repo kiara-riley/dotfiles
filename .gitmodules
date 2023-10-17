@@ -67,3 +67,9 @@
 [submodule "vim/plugins/vim-filetype-formatter"]
 	path = vim/plugins/vim-filetype-formatter
 	url = https://github.com/pappasam/vim-filetype-formatter.git
+[submodule "vim/plugins/coc.nvim"]
+	path = vim/plugins/coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/plugins/direnv.vim"]
+	path = vim/plugins/direnv.vim
+	url = git@github.com:direnv/direnv.vim.git
