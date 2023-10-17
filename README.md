@@ -12,6 +12,7 @@ Requirements
 Installation
 ------------
 
+* `mkdir -p ~/git/personal && cd ~/git/personal`
 * `git clone https://github.com/kiara-riley/dotfiles.git`
 * `cd dotfiles && ./install default`
 

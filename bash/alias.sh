@@ -8,6 +8,8 @@ alias refeh="feh --randomize --bg-fill ~/Pictures/wallpapers/"
 
 alias vim="nvim" # I've used this for a few years and I like it enough as a total replacement
 
+alias nb="nix build --no-link --file default.nix"
+
 reshell() {
   [[ ! -z "$IN_NIX_SHELL" ]] && { exit 1; return; }
   nix-shell || reshell
