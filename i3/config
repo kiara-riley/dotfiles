@@ -259,7 +259,8 @@ client.background       #FFFFFF
 for_window [class=".*"] border pixel 3
 gaps inner 10
 gaps outer 0
-gaps top 30 # For Polybar
+# For Polybar
+gaps top 30
 
 assign [class="Slack"] workspace $ws3
 exec_always slack
