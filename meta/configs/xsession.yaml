@@ -4,7 +4,7 @@
     ~/.config/polybar/config: polybar/config
     ~/.config/polybar/launch.sh: polybar/launch.sh
     ~/.config/tilix/schemes: tilix/base16-tilix/tilix
-    ~/.config/compton.conf: compton/compton.conf
+    ~/.config/picom.conf: picom/picom.conf
     ~/.config/rofi/config.rasi: rofi/config.rasi
     ~/bin: bin/
     ~/.local/share/fonts/CousinePowerline.ttf: 'font/powerline-fonts/Cousine/Cousine for Powerline.ttf'
