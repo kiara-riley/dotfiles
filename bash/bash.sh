@@ -18,4 +18,11 @@ source "$DOTBASH/general.sh"
 source "$DOTBASH/alias.sh"
 source "$DOTBASH/tmuxifier.sh"
 
-eval "$(direnv hook bash)"
+setupsshagent
+
+if ! command -v direnv &> /dev/null
+then
+    echo "direnv could not be found"
+else
+    eval "$(direnv hook bash)"
+fi

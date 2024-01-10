@@ -17,6 +17,15 @@ reshell() {
 
 alias newdirenv="echo 'use nix' > .envrc && direnv allow"
 
+setupsshagent() {
+  if [ -L ~/.ssh/ssh_auth_sock ]; then
+    echo "SSH agent found, using that :)"
+  else
+    echo "SSH agent not found"
+    newagent
+  fi
+}
+
 newagent() {
   eval $(ssh-agent -s)
 
