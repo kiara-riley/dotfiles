@@ -23,6 +23,7 @@ setupsshagent
 if ! command -v direnv &> /dev/null
 then
     #echo "direnv could not be found"
+    true
 else
     eval "$(direnv hook bash)"
 fi
