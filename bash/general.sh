@@ -30,3 +30,11 @@ gpg-connect-agent -q /bye
 if [ -f $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
   source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 fi
+
+# FZF bash integration (history etc)
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+# Write to bash history after every command
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+HISTFILESIZE=10000
