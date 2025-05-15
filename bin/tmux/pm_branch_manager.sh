@@ -29,12 +29,14 @@ origin_branches() {
 }
 
 delete_branch() {
-  force=$(printf "no\nyes" | fzf --header "Force remove $1?" | tail -1)
-  if [[ "$force" == "yes" ]]
-  then
-    git -C "$pm_main_repo_root" worktree remove --force $1
+  if git -C "$pm_main_repo_root" worktree remove $1 ; then
+    return 0
   else
-    git -C "$pm_main_repo_root" worktree remove $1
+    force=$(printf "no\nyes" | fzf --header "Remove failed, Force remove $1?" | tail -1)
+    if [[ "$force" == "yes" ]]
+    then
+      git -C "$pm_main_repo_root" worktree remove --force $1
+    fi
   fi
 }
 
