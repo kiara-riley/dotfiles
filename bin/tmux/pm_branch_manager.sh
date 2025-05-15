@@ -29,7 +29,13 @@ origin_branches() {
 }
 
 delete_branch() {
-  git -C "$pm_main_repo_root" worktree remove $1
+  force=$(printf "no\nyes" | fzf --header "Force remove $1?" | tail -1)
+  if [[ "$force" == "yes" ]]
+  then
+    git -C "$pm_main_repo_root" worktree remove --force $1
+  else
+    git -C "$pm_main_repo_root" worktree remove $1
+  fi
 }
 
 branch_on_fs() {
