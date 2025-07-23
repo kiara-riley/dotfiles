@@ -122,3 +122,5 @@ endfunction
 nmap <Leader>c :call DirenvCoc()<CR>
 " Make function that sets this then unsets this?
 "autocmd User DirenvLoaded :CocRestart
+
+set mouse=
