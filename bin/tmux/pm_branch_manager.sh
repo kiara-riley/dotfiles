@@ -47,6 +47,7 @@ branch_on_fs() {
 
 ### Commands
 
+# TODO this doesn't work when the branch name is the same as the local one
 new_branch() {
   echo "Making Branch"
   read -p "New Branch Name:" branch
