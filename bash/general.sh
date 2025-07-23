@@ -35,6 +35,10 @@ fi
 if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
   source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
+# FZF bash integration (history etc) for nix install
+if [ -f $HOME/.nix-profile/share/fzf/key-bindings.bash ]; then
+  source $HOME/.nix-profile/share/fzf/key-bindings.bash
+fi
 # Write to bash history after every command
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 HISTFILESIZE=10000
