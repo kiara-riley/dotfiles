@@ -53,6 +53,7 @@
     pkgs.rustup
     pkgs.jwt-cli
     pkgs.coreutils
+    pkgs.unixtools.netstat
 
     # dynamic gets rid of a TH warning on every startup
     (pkgs.haskell-language-server.override { dynamic = true; })
