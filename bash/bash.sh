@@ -17,3 +17,13 @@ DOTFILES=$(realpath "$DOTBASH/../")
 source "$DOTBASH/general.sh"
 source "$DOTBASH/alias.sh"
 source "$DOTBASH/tmuxifier.sh"
+
+setupsshagent
+
+if ! command -v direnv &> /dev/null
+then
+    #echo "direnv could not be found"
+    true
+else
+    eval "$(direnv hook bash)"
+fi

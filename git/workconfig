@@ -1,7 +1,7 @@
 # This file configures `~/git`, generally work email and name will exist here. `~/git/personal` is overridden by the `personalconfig` file
 
 [user]
-	signingkey = 70D0D363E22B919B930CA08106CE5C30EA0BC8B1
+	signingkey = 9D7BA1B0E7C0FF69B212C4EFD3D7B9A79E913C6F
 [commit]
 	gpgsign = true
 [user]

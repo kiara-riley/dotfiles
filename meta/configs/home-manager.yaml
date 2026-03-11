@@ -1,0 +1,2 @@
+- link:
+    ~/.config/home-manager/home.nix: nix/home-manager.nix

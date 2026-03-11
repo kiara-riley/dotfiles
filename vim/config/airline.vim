@@ -9,7 +9,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 function GetRepo()
   let cph = expand('%:p:h', 1)
   if cph =~ '^.\+://' | retu | en
-  for mkr in ['.git/', '.hg/', '.svn/', '.bzr/', '_darcs/', '.vimprojects']
+  for mkr in ['.git', '.hg/', '.svn/', '.bzr/', '_darcs/', '.vimprojects']
     let wd = call('find'.(mkr =~ '/$' ? 'dir' : 'file'), [mkr, cph.';'])
     if wd != '' | let &acd = 0 | brea | en
   endfo
@@ -20,4 +20,4 @@ endfunction
 
 let currentGitRepo = GetRepo()
 
-let g:airline_section_b = "%{currentGitRepo} %{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)}%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"
+"let g:airline_section_b = "%{currentGitRepo} %{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)}%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"

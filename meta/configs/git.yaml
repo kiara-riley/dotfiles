@@ -2,3 +2,4 @@
     ~/.config/git/config: git/gitconfig
     ~/.config/git/workconfig: git/workconfig
     ~/.config/git/personalconfig: git/personalconfig
+    ~/.gnupg/gpg-agent.conf: config/gpg-agent.conf

@@ -20,3 +20,6 @@
 
 [includeIf "gitdir:~/personal/**"]
   path = ~/.config/git/personalconfig
+
+[gpg]
+  program = "gpg-pinentry-loopback.sh"

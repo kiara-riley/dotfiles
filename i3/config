@@ -39,6 +39,9 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Open blank window
+bindsym $mod+Shift+o open
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 

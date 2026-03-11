@@ -14,7 +14,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 fi
 
-PATH="$PATH:$HOME/bin:$HOME/bin/tmux"
+PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/bin/tmux"
+PATH="$PATH:$HOME/.local/bin:$PATH"
 
 # Ignore duplicate bash history items
 export HISTCONTROL=ignoreboth:erasedups
@@ -25,3 +27,20 @@ export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 export FZF_DEFAULT_OPTS="--bind 'ctrl-space:clear-query' --info inline"
 
 gpg-connect-agent -q /bye
+
+# Home manager
+if [ -f $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
+  source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+fi
+
+# FZF bash integration (history etc)
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+# FZF bash integration (history etc) for nix install
+if [ -f $HOME/.nix-profile/share/fzf/key-bindings.bash ]; then
+  source $HOME/.nix-profile/share/fzf/key-bindings.bash
+fi
+# Write to bash history after every command
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+HISTFILESIZE=10000
