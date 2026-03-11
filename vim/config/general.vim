@@ -78,9 +78,6 @@ noremap <Esc>o :only<CR>
 " Same Binding for OSX
 "noremap ø :only<CR>
 
-" Redraw screen mapping
-"nnoremap <leader>r :redraw!<CR>
-
 " Lets us select in between the final char and the newline
 set virtualedit=onemore
 
@@ -120,7 +117,5 @@ endfunction
 
 " for a direnv and coc restart
 nmap <Leader>c :call DirenvCoc()<CR>
-" Make function that sets this then unsets this?
-"autocmd User DirenvLoaded :CocRestart
 
 set mouse=
