@@ -50,6 +50,20 @@ Details
 * Network control: NetworkManager-tui - `nmtui`
 * Communication: Slack
 
+Tmux Window Manager Setup
+--------
+
+Bare repo instructions:
+```
+mkdir repo-name
+cd repo-name
+git clone --bare repo.git
+cd repo.git
+git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+git worktree add ../main
+```
+
+And create `~/.pm_vars`
 
 License
 -------
